@@ -4,7 +4,7 @@
 #include <Windows.h>
 using namespace std;
 
-struct movie {
+class movie {
 public:
 	char title[100];
 	char director[100];
@@ -15,18 +15,18 @@ public:
 	int seat3[3][10];
 	int seat4[3][10];
 };
-void ChooseTimeAndSeat(struct movie *p);
-void Reserv1(struct movie *p);
-void Reserv2(struct movie *p);
-void Reserv3(struct movie *p);
-void Reserv4(struct movie *p);
+void ChooseTimeAndSeat(class movie *p);
+void Reserv1(class movie *p);
+void Reserv2(class movie *p);
+void Reserv3(class movie *p);
+void Reserv4(class movie *p);
 
 int main(void) {
 	int X;
-	typedef struct movie movie;
+	typedef class movie movie;
 	movie Avengers = {
-		"¾îº¥Á®½º: ÀÎÇÇ´ÏÆ¼ ¿ö",
-		"¾È¼Ò´Ï ·ç¼Ò, Á¶ ·ç¼Ò ",
+		"ì–´ë²¤ì ¸ìŠ¤: ì¸í”¼ë‹ˆí‹° ì›Œ",//ì˜í™”ì œëª©
+		"ì•ˆì†Œë‹ˆ ë£¨ì†Œ, ì¡° ë£¨ì†Œ ",//ê°ë…
 		149,
 		"Fantasy",
 		{ 0,0,0,0,0,0,0,0,0,0,
@@ -38,10 +38,10 @@ int main(void) {
 		{ 0,0,0,0,0,0,0,0,0,0,
 		0,0,0,0,0,0,0,0,0,0,
 		0,0,0,0,0,0,0,0,0,0 }
-	};
+	};//ì¢Œì„í‘œ
 	movie Gonjiam = {
-		"°ïÁö¾Ï",
-		"Á¤¹ü½Ä",
+		"ê³¤ì§€ì•”",
+		"ì •ë²”ì‹",
 		94,
 		"Thriller",
 		{ 0,0,0,0,0,0,0,0,0,0,
@@ -55,8 +55,8 @@ int main(void) {
 		0,0,0,0,0,0,0,0,0,0 }
 	};
 	movie DetectiveConan = {
-		"¸íÅ½Á¤ ÄÚ³­ ±ØÀåÆÇ °¨º®ÀÇ °ü",
-		"¾ß¸¶¸ğÅä ¾ß½ºÀÌÄ¡·Î",
+		"ëª…íƒì • ì½”ë‚œ ê·¹ì¥íŒ ê°ë²½ì˜ ê´€",
+		"ì•¼ë§ˆëª¨í†  ì•¼ìŠ¤ì´ì¹˜ë¡œ",
 		107,
 		"Animation",
 		{ 0,0,0,0,0,0,0,0,0,0,
@@ -71,7 +71,7 @@ int main(void) {
 	};
 	movie EdgeOfTomorrow = {
 		"Edge of tomorrow",
-		"´õ±× ¶óÀÌ¸¸ ",
+		"ë”ê·¸ ë¼ì´ë§Œ ",
 		113,
 		"Sciencefiction",
 		{ 0,0,0,0,0,0,0,0,0,0,
@@ -86,60 +86,60 @@ int main(void) {
 	};
 	while (1) {
 		system("cls");
-		cout << "¿µÈ­¸¦ ¼±ÅÃÇØ ÁÖ¼¼¿ä." << endl;
-		cout << "1. ¾îº¥Á®½º: ÀÎÇÇ´ÏÆ® ¿ö, 2. °ïÁö¾Ï, 3. ¸íÅ½Á¤ ÄÚ³­ ±ØÀåÆÇ °¨º®ÀÇ °ü, 4. ¿§Áö¿Àºê Åõ¸Ó·Î¿ì, 5. ÇÁ·Î±×·¥ Á¾·á" << endl;
-		cin >> X;
+		cout << "ì˜í™” ì„ íƒ:" << endl;
+		cout << "1. ì–´ë²¤ì ¸ìŠ¤: ì¸í”¼ë‹ˆíŠ¸ ì›Œ, 2. ê³¤ì§€ì•”, 3. ëª…íƒì • ì½”ë‚œ ê·¹ì¥íŒ ê°ë²½ì˜ ê´€, 4. ì—£ì§€ì˜¤ë¸Œ íˆ¬ë¨¸ë¡œìš°, 5. í”„ë¡œê·¸ë¨ ì¢…ë£Œ" << endl;
+		cin >> X;//ì˜í™” ì…ë ¥ë°›ê¸°
 		cout << endl;
 		system("cls");
 		if (X == 1) {
-			cout << "¿µÈ­Á¤º¸" << endl;;
-			cout << "Á¦¸ñ : " << Avengers.title << endl;
-			cout << "°¨µ¶ : " << Avengers.director << endl;
-			cout << "»ó¿µ½Ã°£ : " << Avengers.run << "ºĞ" << endl;
-			cout << "Àå¸£ : " << Avengers.genre << endl;
+			cout << "ì˜í™”ì •ë³´" << endl;;
+			cout << "ì œëª© : " << Avengers.title << endl;
+			cout << "ê°ë… : " << Avengers.director << endl;
+			cout << "ìƒì˜ì‹œê°„ : " << Avengers.run << "ë¶„" << endl;
+			cout << "ì¥ë¥´ : " << Avengers.genre << endl;
 			ChooseTimeAndSeat(&Avengers);
-		}
+		}//ì–´ë²¤ì €ìŠ¤ë¥¼ ì„ íƒë°›ì•˜ì„ ë•Œ
 		else if (X == 2) {
-			cout << "¿µÈ­Á¤º¸" << endl;;
-			cout << "Á¦¸ñ : " << Gonjiam.title << endl;
-			cout << "°¨µ¶ : " << Gonjiam.director << endl;
-			cout << "»ó¿µ½Ã°£ : " << Gonjiam.run << "ºĞ" << endl;
-			cout << "Àå¸£ : " << Gonjiam.genre << endl;
+			cout << "ì˜í™”ì •ë³´" << endl;;
+			cout << "ì œëª© : " << Gonjiam.title << endl;
+			cout << "ê°ë… : " << Gonjiam.director << endl;
+			cout << "ìƒì˜ì‹œê°„ : " << Gonjiam.run << "ë¶„" << endl;
+			cout << "ì¥ë¥´ : " << Gonjiam.genre << endl;
 			ChooseTimeAndSeat(&Gonjiam);
 
-		}
+		}//ê³¤ì§€ì•”ì„ ì„ íƒë°›ì•˜ì„ ë•Œ
 		else if (X == 3) {
-			cout << "¿µÈ­Á¤º¸" << endl;;
-			cout << "Á¦¸ñ : " << DetectiveConan.title << endl;
-			cout << "°¨µ¶ : " << DetectiveConan.director << endl;
-			cout << "»ó¿µ½Ã°£ : " << DetectiveConan.run << "ºĞ" << endl;
-			cout << "Àå¸£ : " << DetectiveConan.genre << endl;
+			cout << "ì˜í™”ì •ë³´" << endl;;
+			cout << "ì œëª© : " << DetectiveConan.title << endl;
+			cout << "ê°ë… : " << DetectiveConan.director << endl;
+			cout << "ìƒì˜ì‹œê°„ : " << DetectiveConan.run << "ë¶„" << endl;
+			cout << "ì¥ë¥´ : " << DetectiveConan.genre << endl;
 			ChooseTimeAndSeat(&DetectiveConan);
-		}
+		}//ëª…íƒì • ì½”ë‚œì„ ì„ íƒë°›ì•˜ì„ ë•Œ
 		else if (X == 4) {
-			cout << "¿µÈ­Á¤º¸" << endl;;
-			cout << "Á¦¸ñ : " << EdgeOfTomorrow.title << endl;
-			cout << "°¨µ¶ : " << EdgeOfTomorrow.director << endl;
-			cout << "»ó¿µ½Ã°£ : " << EdgeOfTomorrow.run << "ºĞ" << endl;
-			cout << "Àå¸£ : " << EdgeOfTomorrow.genre << endl;
-			ChooseTimeAndSeat(&EdgeOfTomorrow);
-		}
+			cout << "ì˜í™”ì •ë³´" << endl;;
+			cout << "ì œëª© : " << EdgeOfTomorrow.title << endl;
+			cout << "ê°ë… : " << EdgeOfTomorrow.director << endl;
+			cout << "ìƒì˜ì‹œê°„ : " << EdgeOfTomorrow.run << "ë¶„" << endl;
+			cout << "ì¥ë¥´ : " << EdgeOfTomorrow.genre << endl;
+			Choê°„ ì„ íƒ:oseTimeAndSeat(&EdgeOfTomorrow);
+		}//ì—£ì§€ì˜¤ë¸Œ íˆ¬ëª¨ë¡œìš°ë¥¼ ì„ íƒë°›ì•˜ì„ë–„
 		else if (X == 5) {
 			exit(0);
 		}
 	}
 };
-void ChooseTimeAndSeat(struct movie *p)
+void ChooseTimeAndSeat(class movie *p)
 {
 	while (1)
 	{
 		int s, i, j;
-		cout << endl << "½Ã°£À» ¼±ÅÃÇØ ÁÖ¼¼¿ä." << endl;
+		cout << endl << "ì‹œê°„ ì„ íƒ:" << endl;
 		cout << "1.  9:30 ~ 11:30" << endl;
 		cout << "2. 12:00 ~ 14:00" << endl;
 		cout << "3. 15:15 ~ 17:15" << endl;
 		cout << "4. 20:45 ~ 22:45" << endl;
-		cin >> s;
+		cin >> s;//ì‹œê°„ì„ ì…ë ¥ë°›ìŒ
 		cout << endl;
 		system("cls");
 		if (s == 1) {
@@ -239,23 +239,23 @@ void ChooseTimeAndSeat(struct movie *p)
 			break;
 		}
 		else
-			cout << "´Ù½Ã ¼±ÅÃÇÏ¼¼¿ä." << endl;
+			cout << "ë‹¤ì‹œ ì„ íƒí•˜ì„¸ìš”." << endl;//ì˜ëª» ì…ë ¥í•˜ì˜€ì„ ë•Œ ë‹¤ì‹œ ì…ë ¥ë°›ìŒ
 	}
 }
 
-void Reserv1(struct movie *p) {
+void Reserv1(class movie *p) {
 	int a, b = 0;
 	int i = 0, j = 0;
 	char C, X;
 	char check = 'Y';
-	struct movie reserver;
+	class movie reserver;
 
-	cout << "¿¹¾àÀÚ ÀÌ¸§À» ÀÔ·ÂÇØ ÁÖ¼¼¿ä." << endl;
-	cin >> reserver.title;
+	cout << "ì˜ˆì•½ì ì´ë¦„ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”." << endl;
+	cin >> reserver.title;//ì´ë¦„ ì…ë ¥ë°›ìŒ
 	cout << endl;
 	while (check == 'Y') {
-		cout << endl << "¿¹¸ÅÇÏ½Ç ÁÂ¼®ÀÇ ¿­À» ¼±ÅÃÇØ ÁÖ¼¼¿ä.(A,B,C,D)" << endl;
-		cin >> C;
+		cout << endl << "ì˜ˆë§¤í•˜ì‹¤ ì¢Œì„ì˜ ì—´ì„ ì„ íƒí•´ ì£¼ì„¸ìš”.(A,B,C,D)" << endl;
+		cin >> C;//ì—´ì„ ë°›ìŒ
 		cout << endl;
 
 		if (C == 'A'&& C == 'a')
@@ -267,7 +267,7 @@ void Reserv1(struct movie *p) {
 		if (C == 'D'&& C == 'd')
 			b = 3;
 
-		cout << endl << "¿¹¸ÅÇÏ½Ç ÁÂ¼®ÀÇ ¹øÈ£¸¦ ¼±ÅÃÇØ ÁÖ¼¼¿ä.(1~10)" << endl;
+		cout << endl << "ì˜ˆë§¤í•˜ì‹¤ ì¢Œì„ì˜ ë²ˆí˜¸ë¥¼ ì„ íƒí•´ ì£¼ì„¸ìš”.(1~10)" << endl;
 		cin >> a;
 		if (p->seat1[b - 1][a - 1] == 0) {
 			p->seat1[b - 1][a - 1] = 1;
@@ -275,26 +275,26 @@ void Reserv1(struct movie *p) {
 
 		}
 		else {
-			cout << "ÀÌ¹Ì ¿¹¾àµÈ ÁÂ¼®ÀÔ´Ï´Ù" << endl;
+			cout << "ì´ë¯¸ ì˜ˆì•½ëœ ì¢Œì„ì…ë‹ˆë‹¤" << endl;
 			continue;
 		}
-		cout << "°è¼Ó ¿¹¸Å ÇÏ½Ã°Ú½À´Ï±î? (Y/N) : " << endl;
+		cout << "ê³„ì† ì˜ˆë§¤ í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (Y/N) : " << endl;
 		cin >> check;
 		cout << endl;
 	}
 	ifstream f("reserver.title");
 	if (!f) {
-		cout << "ÆÄÀÏÀÌ ¿­¸®Áö ¾Ê½À´Ï´Ù." << endl;
+		cout << "íŒŒì¼ì´ ì—´ë¦¬ì§€ ì•ŠìŠµë‹ˆë‹¤." << endl;
 	}
 
 	cout << " -------------------------------------------------------" << endl;
-	cout << "                     ¿µÈ­ ¿¹¸ÅÇ¥" << endl;
-	cout << " ¿¹¸ÅÀÚ ÀÌ¸§ : " << endl << reserver.title;
-	cout << " ¿µÈ­Á¦¸ñ : " << endl << p->title;
-	cout << " ¿µÈ­½Ã°£ : 9:30 ~ 11:30" << endl;
-	cout << " »ó¿µ½Ã°£ : " << p->run << endl;
-	cout << " ¿µÈ­Àå¸£ : " << p->genre << endl;
-	cout << " ÁÂ¼® : ";
+	cout << "                     ì˜í™” ì˜ˆë§¤í‘œ" << endl;
+	cout << " ì˜ˆë§¤ì ì´ë¦„ : " << endl << reserver.title;
+	cout << " ì˜í™”ì œëª© : " << endl << p->title;
+	cout << " ì˜í™”ì‹œê°„ : 9:30 ~ 11:30" << endl;
+	cout << " ìƒì˜ì‹œê°„ : " << p->run << endl;
+	cout << " ì˜í™”ì¥ë¥´ : " << p->genre << endl;
+	cout << " ì¢Œì„ : ";
 	for (j = 0; j < 4; j++)
 	{
 		if (j == 0) {
@@ -333,11 +333,11 @@ void Reserv2(struct movie *p) {
 	struct movie reserver;
 	ifstream f("reserver.title");
 
-	cout << "¿¹¾àÀÚ ÀÌ¸§À» ÀÔ·ÂÇØ ÁÖ¼¼¿ä." << endl;
+	cout << "ì˜ˆì•½ì ì´ë¦„ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”." << endl;
 	cin >> reserver.title;
 
 	while (check == 'Y') {
-		cout << endl << "¿¹¸ÅÇÏ½Ç ÁÂ¼®ÀÇ ¿­À» ¼±ÅÃÇØ ÁÖ¼¼¿ä.(A,B,C,D)" << endl;
+		cout << endl << "ì˜ˆë§¤í•˜ì‹¤ ì¢Œì„ì˜ ì—´ì„ ì„ íƒí•´ ì£¼ì„¸ìš”.(A,B,C,D)" << endl;
 		cin >> C;
 
 		if (C == 'A'&& C == 'a')
@@ -349,7 +349,7 @@ void Reserv2(struct movie *p) {
 		if (C == 'D'&& C == 'd')
 			b = 3;
 
-		cout << endl << "¿¹¸ÅÇÏ½Ç ÁÂ¼®ÀÇ ¹øÈ£¸¦ ¼±ÅÃÇØ ÁÖ¼¼¿ä.(1~10)" << endl;
+		cout << endl << "ì˜ˆë§¤í•˜ì‹¤ ì¢Œì„ì˜ ë²ˆí˜¸ë¥¼ ì„ íƒí•´ ì£¼ì„¸ìš”.(1~10)" << endl;
 		cin >> a;
 		if (p->seat1[b - 1][a - 1] == 0) {
 			p->seat1[b - 1][a - 1] = 1;
@@ -357,23 +357,23 @@ void Reserv2(struct movie *p) {
 
 		}
 		else {
-			cout << "ÀÌ¹Ì ¿¹¾àµÈ ÁÂ¼®ÀÔ´Ï´Ù" << endl;
+			cout << "ì´ë¯¸ ì˜ˆì•½ëœ ì¢Œì„ì…ë‹ˆë‹¤" << endl;
 			continue;
 		}
-		cout << "°è¼Ó ¿¹¸Å ÇÏ½Ã°Ú½À´Ï±î? (Y/N) : " << endl;
+		cout << "ê³„ì† ì˜ˆë§¤ í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (Y/N) : " << endl;
 		cin >> check;
 	}
 	if (!f) {
-		cout << "ÆÄÀÏÀÌ ¿­¸®Áö ¾Ê½À´Ï´Ù." << endl;
+		cout << "íŒŒì¼ì´ ì—´ë¦¬ì§€ ì•ŠìŠµë‹ˆë‹¤." << endl;
 	}
 	cout << " -------------------------------------------------------" << endl;
-	cout << "                     ¿µÈ­ ¿¹¸ÅÇ¥" << endl;
-	cout << " ¿¹¸ÅÀÚ ÀÌ¸§ : " << endl << reserver.title;
-	cout << " ¿µÈ­Á¦¸ñ : " << endl << p->title;
-	cout << " ¿µÈ­½Ã°£ : 9:30 ~ 11:30" << endl;
-	cout << " »ó¿µ½Ã°£ : " << p->run << endl;
-	cout << " ¿µÈ­Àå¸£ : " << p->genre << endl;
-	cout << " ÁÂ¼® : ";
+	cout << "                     ì˜í™” ì˜ˆë§¤í‘œ" << endl;
+	cout << " ì˜ˆë§¤ì ì´ë¦„ : " << endl << reserver.title;
+	cout << " ì˜í™”ì œëª© : " << endl << p->title;
+	cout << " ì˜í™”ì‹œê°„ : 9:30 ~ 11:30" << endl;
+	cout << " ìƒì˜ì‹œê°„ : " << p->run << endl;
+	cout << " ì˜í™”ì¥ë¥´ : " << p->genre << endl;
+	cout << " ì¢Œì„ : ";
 	for (j = 0; j < 4; j++)
 	{
 		if (j == 0) {
@@ -413,10 +413,10 @@ void Reserv3(struct movie *p) {
 	struct movie reserver;
 	ifstream f("reserver.title");
 
-	cout << "¿¹¾àÀÚ ÀÌ¸§À» ÀÔ·ÂÇØ ÁÖ¼¼¿ä." << endl;
+	cout << "ì˜ˆì•½ì ì´ë¦„ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”." << endl;
 	cin >> reserver.title;
 	while (check == 'Y') {
-		cout << endl << "¿¹¸ÅÇÏ½Ç ÁÂ¼®ÀÇ ¿­À» ¼±ÅÃÇØ ÁÖ¼¼¿ä.(A,B,C,D)" << endl;
+		cout << endl << "ì˜ˆë§¤í•˜ì‹¤ ì¢Œì„ì˜ ì—´ì„ ì„ íƒí•´ ì£¼ì„¸ìš”.(A,B,C,D)" << endl;
 		cin >> C;
 
 		if (C == 'A'&& C == 'a')
@@ -428,30 +428,30 @@ void Reserv3(struct movie *p) {
 		if (C == 'D'&& C == 'd')
 			b = 3;
 
-		cout << endl << "¿¹¸ÅÇÏ½Ç ÁÂ¼®ÀÇ ¹øÈ£¸¦ ¼±ÅÃÇØ ÁÖ¼¼¿ä.(1~10)" << endl;
+		cout << endl << "ì˜ˆë§¤í•˜ì‹¤ ì¢Œì„ì˜ ë²ˆí˜¸ë¥¼ ì„ íƒí•´ ì£¼ì„¸ìš”.(1~10)" << endl;
 		cin >> a;
 		if (p->seat1[b - 1][a - 1] == 0) {
 			p->seat1[b - 1][a - 1] = 1;
 			reserver.seat1[b - 1][a - 1] = 1;
 		}
 		else {
-			cout << "ÀÌ¹Ì ¿¹¾àµÈ ÁÂ¼®ÀÔ´Ï´Ù" << endl;
+			cout << "ì´ë¯¸ ì˜ˆì•½ëœ ì¢Œì„ì…ë‹ˆë‹¤" << endl;
 			continue;
 		}
-		cout << "°è¼Ó ¿¹¸Å ÇÏ½Ã°Ú½À´Ï±î? (Y/N) : " << endl;
+		cout << "ê³„ì† ì˜ˆë§¤ í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (Y/N) : " << endl;
 		cin >> check;
 	}
 	if (!f) {
-		cout << "ÆÄÀÏÀÌ ¿­¸®Áö ¾Ê½À´Ï´Ù." << endl;
+		cout << "íŒŒì¼ì´ ì—´ë¦¬ì§€ ì•ŠìŠµë‹ˆë‹¤." << endl;
 	}
 	cout << " -------------------------------------------------------" << endl;
-	cout << "                     ¿µÈ­ ¿¹¸ÅÇ¥" << endl;
-	cout << " ¿¹¸ÅÀÚ ÀÌ¸§ : " << endl << reserver.title;
-	cout << " ¿µÈ­Á¦¸ñ : " << endl << p->title;
-	cout << " ¿µÈ­½Ã°£ : 9:30 ~ 11:30" << endl;
-	cout << " »ó¿µ½Ã°£ : " << p->run << endl;
-	cout << " ¿µÈ­Àå¸£ : " << p->genre << endl;
-	cout << " ÁÂ¼® : ";
+	cout << "                     ì˜í™” ì˜ˆë§¤í‘œ" << endl;
+	cout << " ì˜ˆë§¤ì ì´ë¦„ : " << endl << reserver.title;
+	cout << " ì˜í™”ì œëª© : " << endl << p->title;
+	cout << " ì˜í™”ì‹œê°„ : 9:30 ~ 11:30" << endl;
+	cout << " ìƒì˜ì‹œê°„ : " << p->run << endl;
+	cout << " ì˜í™”ì¥ë¥´ : " << p->genre << endl;
+	cout << " ì¢Œì„ : ";
 	for (j = 0; j < 4; j++)
 	{
 		if (j == 0) {
@@ -490,10 +490,10 @@ void Reserv4(struct movie *p) {
 	struct movie reserver;
 	ifstream f("reserver.title");
 
-	cout << "¿¹¾àÀÚ ÀÌ¸§À» ÀÔ·ÂÇØ ÁÖ¼¼¿ä." << endl;
+	cout << "ì˜ˆì•½ì ì´ë¦„ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”." << endl;
 	cin >> reserver.title;
 	while (check == 'Y') {
-		cout << endl << "¿¹¸ÅÇÏ½Ç ÁÂ¼®ÀÇ ¿­À» ¼±ÅÃÇØ ÁÖ¼¼¿ä.(A,B,C,D)" << endl;
+		cout << endl << "ì˜ˆë§¤í•˜ì‹¤ ì¢Œì„ì˜ ì—´ì„ ì„ íƒí•´ ì£¼ì„¸ìš”.(A,B,C,D)" << endl;
 		cin >> C;
 
 		if (C == 'A'&& C == 'a')
@@ -505,7 +505,7 @@ void Reserv4(struct movie *p) {
 		if (C == 'D'&& C == 'd')
 			b = 3;
 
-		cout << endl << "¿¹¸ÅÇÏ½Ç ÁÂ¼®ÀÇ ¹øÈ£¸¦ ¼±ÅÃÇØ ÁÖ¼¼¿ä.(1~10)" << endl;
+		cout << endl << "ì˜ˆë§¤í•˜ì‹¤ ì¢Œì„ì˜ ë²ˆí˜¸ë¥¼ ì„ íƒí•´ ì£¼ì„¸ìš”.(1~10)" << endl;
 		cin >> a;
 		if (p->seat1[b - 1][a - 1] == 0) {
 			p->seat1[b - 1][a - 1] = 1;
@@ -513,23 +513,23 @@ void Reserv4(struct movie *p) {
 
 		}
 		else {
-			cout << "ÀÌ¹Ì ¿¹¾àµÈ ÁÂ¼®ÀÔ´Ï´Ù" << endl;
+			cout << "ì´ë¯¸ ì˜ˆì•½ëœ ì¢Œì„ì…ë‹ˆë‹¤" << endl;
 			continue;
 		}
-		cout << "°è¼Ó ¿¹¸Å ÇÏ½Ã°Ú½À´Ï±î? (Y/N) : " << endl;
+		cout << "ê³„ì† ì˜ˆë§¤ í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (Y/N) : " << endl;
 		cin >> check;
 	}
 	if (!f) {
-		cout << "ÆÄÀÏÀÌ ¿­¸®Áö ¾Ê½À´Ï´Ù." << endl;
+		cout << "íŒŒì¼ì´ ì—´ë¦¬ì§€ ì•ŠìŠµë‹ˆë‹¤." << endl;
 	}
 	cout << " -------------------------------------------------------" << endl;
-	cout << "                     ¿µÈ­ ¿¹¸ÅÇ¥" << endl;
-	cout << " ¿¹¸ÅÀÚ ÀÌ¸§ : " << endl << reserver.title;
-	cout << " ¿µÈ­Á¦¸ñ : " << endl << p->title;
-	cout << " ¿µÈ­½Ã°£ : 9:30 ~ 11:30" << endl;
-	cout << " »ó¿µ½Ã°£ : " << p->run << endl;
-	cout << " ¿µÈ­Àå¸£ : " << p->genre << endl;
-	cout << " ÁÂ¼® : ";
+	cout << "                     ì˜í™” ì˜ˆë§¤í‘œ" << endl;
+	cout << " ì˜ˆë§¤ì ì´ë¦„ : " << endl << reserver.title;
+	cout << " ì˜í™”ì œëª© : " << endl << p->title;
+	cout << " ì˜í™”ì‹œê°„ : 9:30 ~ 11:30" << endl;
+	cout << " ìƒì˜ì‹œê°„ : " << p->run << endl;
+	cout << " ì˜í™”ì¥ë¥´ : " << p->genre << endl;
+	cout << " ì¢Œì„ : ";
 	for (j = 0; j < 4; j++)
 	{
 		if (j == 0) {
